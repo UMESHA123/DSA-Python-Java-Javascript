@@ -1,12 +1,9 @@
-class Fibonachi{
-    
+import java.util.Arrays;
 
-    Fibonachi(int n){
-        int memo[] = new int[n+1];
-       
-    }
-
-    public int fib(int n){
+public class O1_Fibonacci_memo{
+    static int memo[];
+   
+    static int fib(int n){
         if(memo[n] == -1){
             int res;
             if(n==0 || n==1){
@@ -19,13 +16,12 @@ class Fibonachi{
         }
         return memo[n];
     }
-}
-
-public class O1_Fibonacci_memo{
     public static void main(String args[]){
-        int n = 5;
-        Fibonachi ob1 = new Fibonachi(n);
-        int res = ob1.fib(n);
-        System.out.println("Result ", res);
+       int n = 5;
+       memo = new int[n+1];
+       Arrays.fill(memo, -1);
+       
+       int res = fib(n);
+       System.out.println(res);
     }
 }
